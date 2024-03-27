@@ -7,8 +7,21 @@ environment:
   sdk: '>=3.3.1 <4.0.0'
 
 dependencies:
+  firebase_auth: ^4.18.0
+  firebase_ui_auth: ^1.13.1
+  firebase_core: ^2.27.2
   flutter:
     sdk: flutter
+  go_router: 7.1.1 
+  network_info_plus: ^3.0.1
+  qr_flutter: ^4.0.0
+  qr_code_scanner: ^1.0.1
+  window_size:
+    git:
+      url: https://github.com/google/flutter-desktop-embedding.git
+      path: plugins/window_size
+  provider: ^6.1.2
+
 
 dev_dependencies:
   flutter_test:
