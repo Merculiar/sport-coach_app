@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:sport_coach_app/dialogs/edit_dialog.dart';
 import 'package:sport_coach_app/providers/socket_provider.dart';
 import 'package:sport_coach_app/router/routes.dart';
 import 'package:sport_coach_app/utils/utils.dart';
@@ -58,12 +59,17 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen> {
               ),
               const SizedBox(height: 8),
               Text(
-                'Information: ${socketProvider.matchInfo}',
+                'Information: ${socketProvider.information}',
                 style: const TextStyle(fontSize: 20),
               ),
               const SizedBox(height: 8),
               ElevatedButton(
-                onPressed: () {},
+              onPressed: () async {
+                  showDialog<void>(
+                    context: context,
+                    builder: (_) => const EditDialog(),
+                  );
+                },
                 child: const Text('Edit data'),
               ),
               const SizedBox(height: 16),
@@ -71,7 +77,9 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      socketProvider.sendData();
+                    },
                     child: const Text('Send data'),
                   ),
                 ],
