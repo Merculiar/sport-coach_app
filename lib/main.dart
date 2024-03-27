@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:sport_coach_app/firebase_options.dart';
 import 'package:sport_coach_app/providers/socket_provider.dart';
 import 'package:sport_coach_app/router/app_router.dart';
+import 'package:sport_coach_app/services/encrypt_service.dart';
 import 'package:sport_coach_app/utils/utils.dart';
 import 'package:window_size/window_size.dart';
 
@@ -19,6 +20,7 @@ Future<void> main() async {
     setWindowMinSize(const Size(700, 600));
     setWindowMaxSize(Size.infinite);
   }
+  EncryptService.initEncryption();
   runApp(const MyApp());
 }
 

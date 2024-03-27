@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   go_router: 7.1.1 
+  encrypt: ^5.0.1
   network_info_plus: ^3.0.1
   qr_flutter: ^4.0.0
   qr_code_scanner: ^1.0.1
